@@ -1,6 +1,6 @@
 /* Estilo para a navegação */
 nav {
-  background-color: #007bff;
+  background-color: #003f5c;
   padding: 15px 20px;
 }
 .home-container nav.hidden {
@@ -27,7 +27,7 @@ li {
 
 /* Estilo dos links */
 a {
-  color: white;
+  color: #e7a528;
   text-decoration: none;
   font-weight: bold;
 }
@@ -35,13 +35,24 @@ a {
 a:hover {
   text-decoration: underline;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
+.home-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 /* Estilo para o conteúdo */
 .content {
   padding: 20px;
-background: linear-gradient(to bottom, #007bff, #f9f9f9);
+  background-color: #003f5c;
+  flex-grow: 1;
+  overflow: auto;
 }
-
 /* Responsividade */
 @media (max-width: 600px) {
   ul {

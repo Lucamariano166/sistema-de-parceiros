@@ -2,6 +2,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
@@ -10,16 +11,18 @@ th, td {
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #004d6e;
+  color: #ffffff;
   text-align: left;
+  font-weight: bold;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+tbody tr {
+  background-color: #f4f4f4;
 }
 
 tbody tr:hover {
-  background-color: #e0e0e0;
+  background-color: #e0f7fa;
 }
 
 td {
@@ -42,27 +45,27 @@ button {
 }
 
 button.edit {
-  background-color: #0a2497;
+  background-color: #4caf50;
 }
 
 button.edit:hover {
-  background-color: #1537a7;
+  background-color: #45a049;
 }
 
 button.delete {
-  background-color: #832508;
+  background-color: #f44336;
 }
 
 button.delete:hover {
-  background-color: #cc3200;
+  background-color: #d32f2f;
 }
 
 button.new {
-  background-color: #08834a;
+  background-color: #2196f3;
 }
 
 button.new:hover {
-  background-color: #054d3a;
+  background-color: #1976d2;
 }
 
 @media (max-width: 600px) {

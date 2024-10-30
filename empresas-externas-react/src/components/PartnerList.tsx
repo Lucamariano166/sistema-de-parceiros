@@ -6,23 +6,25 @@ import styled from 'styled-components';
 const PAGE_SIZE = 5;
 
 const Container = styled.div`
-    padding: 20px;
+    padding: 10px;
     font-family: Arial, sans-serif;
 `;
 
 const Title = styled.h2`
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    font-size: 20px;
 `;
 
 const Table = styled.table`
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
     th, td {
-        padding: 12px;
+        padding: 8px;
         text-align: left;
         border: 1px solid #ddd;
+        font-size: 14px;
     }
 
     th {
@@ -32,6 +34,22 @@ const Table = styled.table`
     tr:hover {
         background-color: #f5f5f5;
     }
+
+    @media (max-width: 600px) {
+        font-size: 12px;
+
+        th, td {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        tr {
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
 `;
 
 const Button = styled.button`
@@ -39,9 +57,10 @@ const Button = styled.button`
     color: white;
     border: none;
     border-radius: 4px;
-    padding: 8px 12px;
+    padding: 6px 10px;
     cursor: pointer;
     margin-right: 5px;
+    font-size: 14px;
 
     &:hover {
         background-color: #065e3c; 
@@ -57,7 +76,12 @@ const Pagination = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 15px;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 `;
 
 const PartnerList: React.FC = () => {
@@ -78,13 +102,12 @@ const PartnerList: React.FC = () => {
                 const data = await fetchPartners();
                 setPartners(data);
                 setTotalPages(Math.ceil(data.length / PAGE_SIZE));
-            } catch (err) {
+            } catch {
                 setError('Erro ao carregar parceiros');
             } finally {
                 setLoading(false);
             }
         };
-
         getPartners();
     }, []);
 
@@ -93,7 +116,7 @@ const PartnerList: React.FC = () => {
             try {
                 await deletePartner(id);
                 setPartners((prev) => prev.filter((partner) => partner.id !== id));
-            } catch (err) {
+            } catch {
                 setError('Erro ao deletar parceiro');
             }
         }
@@ -111,9 +134,9 @@ const PartnerList: React.FC = () => {
 
     return (
         <Container>
-            <Title>Lista de Empresas.</Title>
+            <Title>Lista de Empresas</Title>
             <Link to="/home/create-partner">
-                <Button>Cadastrar Nova Empresas</Button>
+                <Button>Cadastrar Nova Empresa</Button>
             </Link>
             {currentPartners.length > 0 ? (
                 <Table>

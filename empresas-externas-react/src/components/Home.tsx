@@ -25,6 +25,11 @@ const Navbar = styled.nav`
         margin: 0; 
         display: flex;
         gap: 20px; 
+
+        @media (max-width: 768px) {
+            flex-direction: column; 
+            gap: 10px;
+        }
     }
 
     a {
@@ -36,23 +41,30 @@ const Navbar = styled.nav`
         &:hover {
             color: #ff3c00; 
         }
+
+        @media (max-width: 768px) {
+            font-size: 14px; 
+        }
     }
 `;
 
 const Main = styled.main`
     flex: 1; 
     padding: 20px; 
-    background-color: #f0f4f8; 
+    background-color: #f0f4f8;
+
+    @media (max-width: 768px) {
+        padding: 10px; 
+    }
 `;
 
 const Home: React.FC = () => {
     return (
         <Container>
             <Navbar>
-           
                 <ul>
                     <li><Link to="/home/create-partner">Cadastrar Empresa</Link></li>
-                    <li><Link to="/home/partners">Listar Todos as Empresas</Link></li>
+                    <li><Link to="/home/partners">Listar Todas as Empresas</Link></li>
                     <li><Link to="/home/about">Sobre a Aplicação</Link></li>
                     <li><Link to="/">Sair</Link></li>
                 </ul>

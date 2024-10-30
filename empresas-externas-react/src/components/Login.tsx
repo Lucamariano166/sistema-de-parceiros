@@ -9,6 +9,11 @@ const Container = styled.div`
     justify-content: center;
     height: 100vh; 
     background-color: #f0f4f8; 
+    padding: 0 20px; 
+
+    @media (max-width: 480px) {
+        padding: 0 10px;
+    }
 `;
 
 const Form = styled.div`
@@ -18,12 +23,21 @@ const Form = styled.div`
     padding: 40px;
     width: 100%;
     max-width: 400px; 
+
+    @media (max-width: 480px) {
+        padding: 20px; 
+    }
 `;
 
 const Title = styled.h2`
     margin-bottom: 20px;
     font-size: 24px; 
     color: #333; 
+    text-align: center;
+
+    @media (max-width: 480px) {
+        font-size: 20px; 
+    }
 `;
 
 const Input = styled.input`
@@ -39,12 +53,21 @@ const Input = styled.input`
         border-color: #076344;
         outline: none; 
     }
+
+    @media (max-width: 480px) {
+        font-size: 14px; 
+    }
 `;
 
 const Label = styled.label`
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    font-size: 14px; 
+
+    @media (max-width: 480px) {
+        font-size: 13px;
+    }
 `;
 
 const Checkbox = styled.input`
@@ -64,6 +87,11 @@ const Button = styled.button`
 
     &:hover {
         background-color: #054d3a; 
+    }
+
+    @media (max-width: 480px) {
+        padding: 10px 0;
+        font-size: 15px; 
     }
 `;
 

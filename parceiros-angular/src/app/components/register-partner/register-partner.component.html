@@ -1,0 +1,39 @@
+
+<form (ngSubmit)="registerPartner()" #partnerForm="ngForm">
+  <div>
+    <label for="name">Nome:</label>
+    <input type="text" id="name" [(ngModel)]="partner.name" name="name" required>
+  </div>
+
+  <div>
+    <label for="description">Descrição:</label>
+    <textarea id="description" [(ngModel)]="partner.description" name="description" required></textarea>
+  </div>
+
+  <div>
+    <label for="repositoryGit">Repositório Git:</label>
+    <input type="url" id="repositoryGit" [(ngModel)]="partner.repositoryGit" name="repositoryGit" required>
+  </div>
+
+  <div>
+    <label for="urlDoc">URL do Documento:</label>
+    <input type="url" id="urlDoc" [(ngModel)]="partner.urlDoc" name="urlDoc" required>
+  </div>
+
+  <div>
+    <label for="clients">Clientes (separados por vírgula):</label>
+    <input type="text" id="clients" [(ngModel)]="partner.clients" name="clients" required>
+  </div>
+
+  <div>
+    <label for="projects">Projetos (separados por vírgula):</label>
+    <input type="text" id="projects" [(ngModel)]="partner.projects" name="projects" required>
+  </div>
+
+  <button type="submit" [disabled]="!partnerForm.form.valid">
+    {{ isEditMode ? 'Atualizar Dados' : 'Cadastrar Parceiro' }}
+  </button>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+</form>

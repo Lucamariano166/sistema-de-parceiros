@@ -1,0 +1,14 @@
+<div class="home-container">
+  <nav *ngIf="!isNavbarHidden">
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/register">Cadastrar Parceiro</a></li>
+      <li><a routerLink="/partners">Listar Todos os Parceiros</a></li>
+      <li><a routerLink="/about">Sobre a Aplicação</a></li>
+      <li class="logout"><a (click)="logout()">Sair</a></li>
+    </ul>
+  </nav>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

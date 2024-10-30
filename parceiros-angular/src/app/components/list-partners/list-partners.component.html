@@ -1,0 +1,30 @@
+<button class="new" (click)="addPartner()">Adcionar novo Parceiro</button>
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Git</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let partner of paginatedPartners">
+      <td>{{ partner.name }}</td>
+      <td>{{ partner.description }}</td>
+              <td>
+                <a [href]="partner.repositoryGit" target="_blank">{{ partner.repositoryGit }}</a>
+              </td>
+
+      <td>
+        <button class="edit" (click)="editPartner(partner.id)">Editar</button>
+        <button class="delete" (click)="deletePartner(partner.id)">Deletar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<mat-paginator [length]="partners.length" [pageSize]="pageSize" (page)="onPageChange($event)">
+</mat-paginator>
+
+
